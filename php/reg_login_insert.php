@@ -12,17 +12,30 @@
 
 	require_once ('util/db.php');
 
-	$username = $_GET["username"];
-    $password = $_GET["password"];
-    //$email = $_GET["email"];
-    // $mobile = $_GET["mobile"];
+	$username = $_POST["username"];
+    $password = $_POST["password"];
+    $email = $_POST["email"];
+    $gender = $_POST["gender"];
+    $edu = $_POST["edu"];
+    $desc = $_POST["desc"];
+    $hobbies = $_POST["hobbies"];
+    $pic = $_POST["pic"];
     // $now = date("Y-m-d h:i:s");
 
     $data = Array(
         "username" => $username,
         "password" => $password,
-        //"email" => $email
+        "email" => $email,
+        "gender" => $gender,
+        "edu" => $edu,
+        "desc" => $desc,
+        "hobbies" => implode('|', $hobbies),
+        "pic" => $pic
     );
+
+    /*print_r($data);
+
+    die;*/
 
     $id = $db->insert('reg_login', $data);
 

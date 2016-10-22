@@ -22,9 +22,11 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <h1>用户登陆界面</h1>
+                <hr>
                
-                <form role="form" method="get" action="../php/reg_login_enter.php">
+                <form role="form" method="post" action="../php/reg_login_enter.php">
                     <div class="form-group">
                         <label for="exampleInputEmail1">用户名：</label>
                         <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Username" name="username">
@@ -32,10 +34,16 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">密码：</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
-                    </div>                   
-                        <button type="submit" class="btn btn-default">登陆</button>
-                        <button type="reset" class="btn btn-default">重置</button>
-                        <input type="button" class="btn btn-default" id="returnBtn" value="返回"></input>
+                    </div>       
+                    <div>
+                        <label>验证码：<input type="text" name="vcode"></label>
+                        <img title="点击刷新" src="../vcode/captcha.php" align="absbottom" onclick="this.src='../vcode/captcha.php?'+Math.random();">
+                    </div>  
+                    <hr>    
+
+                    <button type="submit" class="btn btn-default">登陆</button>
+                    <button type="reset" class="btn btn-default">重置</button>
+                    <input type="button" class="btn btn-default" id="returnBtn" value="返回"></input>
                 </form>
 
 
